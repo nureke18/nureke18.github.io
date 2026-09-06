@@ -1,0 +1,14 @@
+**/misc
+~$*
+node_modules
+.env
+
+**/.venv
+**/venv
+
+.~lock.*
+
+**/AutogluonModels
+**/models
+
+*.pkl
