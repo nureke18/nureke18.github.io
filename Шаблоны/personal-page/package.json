@@ -1,0 +1,59 @@
+{
+  "name": "portfolio-test",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Client template for DavDev",
+  "author": "@ratchet535",
+  "type": "module",
+  "scripts": {
+    "dev": "vp dev",
+    "build": "npm run fix && tsc -b && vp build",
+    "lint": "oxlint",
+    "fmt": "oxfmt",
+    "fix": "oxfmt && oxlint --fix",
+    "preview": "vp preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fontsource/roboto": "^5.3.0",
+    "@mui/icons-material": "^9.4.0",
+    "@mui/lab": "9.0.0-beta.5",
+    "@mui/material": "^9.4.0",
+    "@mui/x-date-pickers": "^9.12.0",
+    "gsap": "^3.13.0",
+    "i18next": "^26.4.2",
+    "i18next-browser-languagedetector": "^8.2.1",
+    "i18next-http-backend": "^4.0.2",
+    "mui-image": "^1.0.9",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-i18next": "^17.0.13",
+    "react-router-dom": "^7.18.3",
+    "react-toastify": "^11.1.0",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@rolldown/plugin-babel": "^0.2.4",
+    "@tauri-apps/cli": "^2.11.4",
+    "@types/mui-image": "^1.0.5",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.1.1",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "dotenv": "^17.4.2",
+    "globals": "^17.12.0",
+    "oxfmt": "^0.67.0",
+    "oxlint": "^1.82.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "typescript": "~7.0.2",
+    "vite": "catalog:",
+    "vite-plus": "catalog:",
+    "workbox-precaching": "^7.4.1"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@12.3.4"
+}

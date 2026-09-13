@@ -1,4 +1,5 @@
 **/misc
+**/.ignore
 ~$*
 node_modules
 .env
