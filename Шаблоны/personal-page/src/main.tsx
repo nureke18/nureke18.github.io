@@ -8,11 +8,11 @@ import './styles.css'
 
 const theme = createTheme({
   palette: {
-    mode: 'dark',
-    background: { default: '#11120f', paper: '#191a16' },
-    primary: { main: '#ff6a3d' },
-    secondary: { main: '#d8ff67' },
-    text: { primary: '#f2f0e9', secondary: '#aaa99f' },
+    mode: 'light',
+    background: { default: '#fffaf1', paper: '#ffffff' },
+    primary: { main: '#ef5a8a' },
+    secondary: { main: '#7447d8' },
+    text: { primary: '#242326', secondary: '#625d65' },
   },
   typography: {
     fontFamily: 'Inter, Arial, sans-serif',
