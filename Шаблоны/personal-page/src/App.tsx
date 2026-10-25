@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import CrystalizedBall from './CrystalizedBall'
+import GooeyNav from './GooeyNav'
 
 type Language = 'kz' | 'ru'
 type Filter = 'all' | 'live' | 'concept'
@@ -107,6 +108,8 @@ function App() {
   const [stackOpen, setStackOpen] = useState(false)
   const [cardFlipped, setCardFlipped] = useState(false)
   const t = copy[language]
+  const navTargets = ['#home', '#about', '#projects', '#skills', '#contact']
+  const navItems = t.nav.map((label, index) => ({ label, href: navTargets[index] }))
   const visibleProjects = projects.filter((project) => filter === 'all' || project.type === filter)
 
   useEffect(() => {
@@ -160,13 +163,18 @@ function App() {
             <span className="brand-mark">N</span>
             <span>NURSAT<span className="brand-dot">.</span></span>
           </a>
-          <div className="nav-links">
-            {t.nav.map((item, index) => (
-              <a href={['#home', '#about', '#projects', '#skills', '#contact'][index]} key={item}>
-                {item}
-              </a>
-            ))}
-          </div>
+          <GooeyNav
+            className="nav-links"
+            items={navItems}
+            theme="light"
+            color="#7543e8"
+            activeTextColor="#ffffff"
+            size="sm"
+            frame={false}
+            particleCount={18}
+            spread={48}
+            gooeyness={0.68}
+          />
           <button
             className="language-toggle"
             type="button"
