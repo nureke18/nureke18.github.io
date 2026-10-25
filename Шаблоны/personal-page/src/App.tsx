@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import LaserFlow from './LaserFlow'
 
 type Language = 'kz' | 'ru'
@@ -106,7 +106,6 @@ function App() {
   const [filter, setFilter] = useState<Filter>('all')
   const [stackOpen, setStackOpen] = useState(false)
   const [cardFlipped, setCardFlipped] = useState(false)
-  const laserSurfaceRef = useRef<HTMLDivElement>(null)
   const t = copy[language]
   const visibleProjects = projects.filter((project) => filter === 'all' || project.type === filter)
 
@@ -147,6 +146,19 @@ function App() {
 
   return (
     <div className="site-shell" lang={language === 'kz' ? 'kk' : 'ru'}>
+      <LaserFlow
+        className="site-laser-background"
+        color="#7543e8"
+        intensity={1.6}
+        beamWidth={1.8}
+        flare={1.5}
+        spread={1.5}
+        fog={0.25}
+        dust={1.1}
+        streaks={1.2}
+        speed={0.65}
+        theme="light"
+      />
       <header className="site-header">
         <nav className="nav wrap" aria-label={language === 'kz' ? 'Негізгі навигация' : 'Основная навигация'}>
           <a className="brand" href="#home" aria-label="Nursat — home">
@@ -192,23 +204,9 @@ function App() {
           </div>
 
           <div className="hero-visual reveal">
-            <LaserFlow
-              className="laser-flow-layer"
-              surfaceRef={laserSurfaceRef}
-              color="#b77aff"
-              intensity={1.25}
-              beamWidth={1.15}
-              flare={1.25}
-              spread={1.2}
-              fog={0.14}
-              dust={0.8}
-              streaks={1.1}
-              speed={0.7}
-              theme="light"
-            />
             <span className="visual-orbit orbit-one" />
             <span className="visual-orbit orbit-two" />
-            <div ref={laserSurfaceRef} className={`flip-card ${cardFlipped ? 'flipped' : ''}`}>
+            <div className={`flip-card ${cardFlipped ? 'flipped' : ''}`}>
               <button
                 className="flip-card-inner"
                 type="button"
