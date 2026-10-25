@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import LaserFlow from './LaserFlow'
+import CrystalizedBall from './CrystalizedBall'
 
 type Language = 'kz' | 'ru'
 type Filter = 'all' | 'live' | 'concept'
@@ -146,18 +146,13 @@ function App() {
 
   return (
     <div className="site-shell" lang={language === 'kz' ? 'kk' : 'ru'}>
-      <LaserFlow
-        className="site-laser-background"
-        color="#7543e8"
-        intensity={1.6}
-        beamWidth={1.8}
-        flare={1.5}
-        spread={1.5}
-        fog={0.25}
-        dust={1.1}
-        streaks={1.2}
-        speed={0.65}
+      <CrystalizedBall
+        className="site-crystalized-background"
+        preset="nebula"
         theme="light"
+        size={0.78}
+        speed={0.55}
+        interactive={false}
       />
       <header className="site-header">
         <nav className="nav wrap" aria-label={language === 'kz' ? 'Негізгі навигация' : 'Основная навигация'}>

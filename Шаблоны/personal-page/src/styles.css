@@ -31,8 +31,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid #7543e8; outline-offs
 
 .site-shell { position: relative; isolation: isolate; overflow: hidden; }
 .site-shell > main, .site-shell > footer { position: relative; z-index: 1; }
-.site-laser-background { position: fixed !important; z-index: 0; inset: 0; width: 100vw; height: 100vh; opacity: .5; mix-blend-mode: multiply; }
-.site-laser-background canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
+.site-crystalized-background { position: fixed !important; z-index: 0; inset: 0; width: 100vw; height: 100vh; opacity: .82; mix-blend-mode: multiply; pointer-events: none; }
+.site-crystalized-background canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
 .wrap { width: min(100% - 64px, 1160px); margin-inline: auto; }
 .site-header { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid #e9e1edcc; background: #fffaf1e8; backdrop-filter: blur(18px); }
 .nav { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
