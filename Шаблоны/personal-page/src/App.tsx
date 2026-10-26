@@ -29,6 +29,16 @@ const copy = {
     projectPortfolioText: 'Мен туралы, дағдыларым және жұмыс үлгілері туралы бір жерден көруге болатын жеке веб-сайт.',
     projectZanKines: 'ZAN-KINES',
     projectZanKinesText: 'Қазақстан заңдары мен Конституциясын қарапайым тілмен түсіндіретін ЖИ құқықтық көмекшісі. Llama 3 күрделі баптарды жеңілдетіп, жауапты мәтін не аудио түрінде береді.',
+    projectEssay: 'Жаһандану және ұлттық құндылықтар',
+    projectEssayText: 'Жаһандану дәуірінде қазақ құндылықтарының қалай өзгеріп, бейімделетінін зерттейтін философиялық мақала. Тіл, отбасы дәстүрі мен тарихи сана ұлттық болмыстың өзегі ретінде қарастырылады.',
+    paperTag: 'ФИЛОСОФИЯЛЫҚ МАҚАЛА',
+    readPaper: 'Мақаланы ашу ↗',
+    contactEmail: 'Пошта',
+    namePlaceholder: 'Атыңыз',
+    emailPlaceholder: 'Поштаңыз',
+    messagePlaceholder: 'Хабарлама',
+    sendMessage: 'Хат жазу ↗',
+    github: 'GitHub профилі ↗',
     projectBudget: 'Ақшаға көзқарас',
     projectBudgetText: 'Күнделікті шығындарды бақылауға көмектесетін бюджет қолданбасының интерфейс концепті.',
     projectTravel: 'Жолға шық',
@@ -43,7 +53,7 @@ const copy = {
     hideStack: 'Тізімді жасыру',
     contactLabel: '04 / БАЙЛАНЫС',
     contactTitle: 'Жаңа идеяңыз бар ма?',
-    contactText: 'Жобаларымды көріп, ұсыныс немесе ой бөліскіңіз келсе, GitHub-та хабарласыңыз.',
+    contactText: 'Жоба, идея немесе бірлескен жұмыс жайлы сөйлескіңіз келсе, маған хат жазыңыз.',
     contactButton: 'GitHub-та ашу ↗',
     footer: 'Зейінмен жасалды · 2026',
     top: 'Жоғарыға',
@@ -74,6 +84,16 @@ const copy = {
     projectPortfolioText: 'Сайт, где собрана информация обо мне, моих навыках и примерах работ.',
     projectZanKines: 'ZAN-KINES',
     projectZanKinesText: 'ИИ-помощник, который простым языком объясняет Конституцию и законы Казахстана. На базе Llama 3 он упрощает сложные статьи и выдаёт ответы текстом или аудио.',
+    projectEssay: 'Национальные ценности в эпоху глобализации',
+    projectEssayText: 'Философская статья о том, как казахские ценности меняются и адаптируются в эпоху глобализации. Язык, семейные традиции и историческая память рассматриваются как основа национальной идентичности.',
+    paperTag: 'ФИЛОСОФСКАЯ СТАТЬЯ',
+    readPaper: 'Открыть статью ↗',
+    contactEmail: 'Почта',
+    namePlaceholder: 'Ваше имя',
+    emailPlaceholder: 'Ваш email',
+    messagePlaceholder: 'Сообщение',
+    sendMessage: 'Написать письмо ↗',
+    github: 'Профиль GitHub ↗',
     projectBudget: 'Деньги под контролем',
     projectBudgetText: 'Концепция интерфейса бюджетного приложения для повседневного учёта расходов.',
     projectTravel: 'В путь',
@@ -88,7 +108,7 @@ const copy = {
     hideStack: 'Скрыть список',
     contactLabel: '04 / КОНТАКТЫ',
     contactTitle: 'Есть новая идея?',
-    contactText: 'Посмотрите мои проекты или напишите мне в GitHub, если хотите поделиться предложением или обсудить идею.',
+    contactText: 'Напишите мне, если хотите обсудить проект, идею или возможное сотрудничество.',
     contactButton: 'Открыть GitHub ↗',
     footer: 'Сделано с вниманием · 2026',
     top: 'Наверх',
@@ -119,6 +139,16 @@ const copy = {
     projectPortfolioText: 'A personal website featuring my background, skills, and examples of my work.',
     projectZanKines: 'ZAN-KINES',
     projectZanKinesText: 'An AI legal assistant that explains Kazakhstan’s Constitution and laws in plain language. Powered by Llama 3, it simplifies legal articles and provides answers as text or audio.',
+    projectEssay: 'National Values in a Globalized World',
+    projectEssayText: 'A philosophy paper on how Kazakh values change and adapt amid globalization. It considers language, family traditions, and historical awareness as foundations of national identity.',
+    paperTag: 'PHILOSOPHY PAPER',
+    readPaper: 'Read the paper ↗',
+    contactEmail: 'Email',
+    namePlaceholder: 'Your name',
+    emailPlaceholder: 'Your email',
+    messagePlaceholder: 'Message',
+    sendMessage: 'Write an email ↗',
+    github: 'GitHub profile ↗',
     projectBudget: 'Money in focus',
     projectBudgetText: 'A budgeting app interface concept for keeping track of everyday spending.',
     projectTravel: 'Hit the road',
@@ -133,7 +163,7 @@ const copy = {
     hideStack: 'Hide list',
     contactLabel: '04 / CONTACT',
     contactTitle: 'Have a new idea?',
-    contactText: 'Explore my projects or reach out on GitHub to share a suggestion or talk about an idea.',
+    contactText: 'Email me to discuss a project, share an idea, or explore working together.',
     contactButton: 'Open GitHub ↗',
     footer: 'Made with care · 2026',
     top: 'Back to top',
@@ -148,6 +178,7 @@ const projects = [
   { id: 'zan-kines', type: 'academic' as const, number: '02', art: 'zan-kines-art' },
   { id: 'budget', type: 'concept' as const, number: '03', art: 'budget-art' },
   { id: 'travel', type: 'concept' as const, number: '04', art: 'travel-art' },
+  { id: 'values-essay', type: 'academic' as const, number: '05', art: 'values-essay-art' },
 ]
 
 function App() {
@@ -179,6 +210,7 @@ function App() {
   const projectName = (id: string) => {
     if (id === 'portfolio') return t.projectPortfolio
     if (id === 'zan-kines') return t.projectZanKines
+    if (id === 'values-essay') return t.projectEssay
     if (id === 'budget') return t.projectBudget
     return t.projectTravel
   }
@@ -186,6 +218,7 @@ function App() {
   const projectDescription = (id: string) => {
     if (id === 'portfolio') return t.projectPortfolioText
     if (id === 'zan-kines') return t.projectZanKinesText
+    if (id === 'values-essay') return t.projectEssayText
     if (id === 'budget') return t.projectBudgetText
     return t.projectTravelText
   }
@@ -324,6 +357,7 @@ function App() {
                           {project.id === 'portfolio' && <div className="preview-home"><b>N<span>.</span></b><i /><i /><div /></div>}
                           {project.id === 'budget' && <div className="preview-budget"><small>MONTHLY OVERVIEW</small><strong>$2,480</strong><div className="budget-bars"><i /><i /><i /><i /><i /><i /><i /></div></div>}
                           {project.id === 'travel' && <div className="preview-travel"><span>✳</span><strong>Find your<br />next place.</strong><i /></div>}
+                          {project.id === 'values-essay' && <div className="preview-essay"><span>ESSAY / 2026</span><strong>ҰЛТТЫҚ<br />ҚҰНДЫЛЫҚ</strong><i>TRADITION × FUTURE</i></div>}
                         </div>
                       </>
                     )}
@@ -331,12 +365,12 @@ function App() {
                     {project.id !== 'zan-kines' && <span className="project-open">↗</span>}
                   </div>
                   <div className="project-info">
-                    <div className="project-topline"><span>{project.type === 'live' ? t.liveTag : project.type === 'academic' ? t.academicTag : t.conceptTag}</span><span>{project.number} / {String(projects.length).padStart(2, '0')}</span></div>
+                    <div className="project-topline"><span>{project.id === 'values-essay' ? t.paperTag : project.type === 'live' ? t.liveTag : project.type === 'academic' ? t.academicTag : t.conceptTag}</span><span>{project.number} / {String(projects.length).padStart(2, '0')}</span></div>
                     <h3>{projectName(project.id)}</h3>
                     <p>{projectDescription(project.id)}</p>
                     <div className="project-bottom">
-                      <span className="project-tech">{project.id === 'portfolio' ? 'REACT · TYPESCRIPT · CSS' : project.id === 'zan-kines' ? 'AI · LLAMA 3 · TEXT + AUDIO' : project.id === 'budget' ? 'PRODUCT DESIGN · UI/UX' : 'MOBILE UI · PROTOTYPE'}</span>
-                      {project.id === 'portfolio' ? <a href="https://nureke18.github.io/" target="_blank" rel="noreferrer">{t.openSite}</a> : project.id === 'zan-kines' ? <a href="/assets/zan-kines-interface.png" target="_blank" rel="noreferrer">{t.viewPreview}</a> : <span className="concept-label">{t.learnMore} ↗</span>}
+                      <span className="project-tech">{project.id === 'portfolio' ? 'REACT · TYPESCRIPT · CSS' : project.id === 'zan-kines' ? 'AI · LLAMA 3 · TEXT + AUDIO' : project.id === 'budget' ? 'PRODUCT DESIGN · UI/UX' : project.id === 'values-essay' ? 'PHILOSOPHY · CULTURE · RESEARCH' : 'MOBILE UI · PROTOTYPE'}</span>
+                      {project.id === 'portfolio' ? <a href="https://nureke18.github.io/" target="_blank" rel="noreferrer">{t.openSite}</a> : project.id === 'zan-kines' ? <a href="/assets/zan-kines-interface.png" target="_blank" rel="noreferrer">{t.viewPreview}</a> : project.id === 'values-essay' ? <a href="/articles/zhahandanu-ulttyq-qundylyqtar.docx" target="_blank" rel="noreferrer">{t.readPaper}</a> : <span className="concept-label">{t.learnMore} ↗</span>}
                     </div>
                   </div>
                 </article>
@@ -364,10 +398,31 @@ function App() {
 
         <section className="contact-section wrap" id="contact">
           <div className="contact-card reveal">
-            <span className="section-kicker">{t.contactLabel}</span>
-            <div className="contact-content"><h2>{t.contactTitle}</h2><p>{t.contactText}</p></div>
-            <a className="button button-dark" href="https://github.com/nureke18" target="_blank" rel="noreferrer">{t.contactButton}<span>↗</span></a>
-            <span className="contact-decoration">N.</span>
+            <div className="contact-grid">
+              <div className="contact-intro">
+                <span className="section-kicker">{t.contactLabel}</span>
+                <div className="contact-content"><h2>{t.contactTitle}</h2><p>{t.contactText}</p></div>
+                <a className="contact-email" href="mailto:kenzalynursat@gmail.com"><span aria-hidden="true">✉</span><span>{t.contactEmail}<strong>kenzalynursat@gmail.com</strong></span></a>
+                <a className="contact-github" href="https://github.com/nureke18" target="_blank" rel="noreferrer">◉ &nbsp;{t.github}</a>
+              </div>
+              <form className="contact-form" aria-label={t.contactTitle} onSubmit={(event) => {
+                event.preventDefault()
+                const form = new FormData(event.currentTarget)
+                const name = String(form.get('name') ?? '')
+                const email = String(form.get('email') ?? '')
+                const message = String(form.get('message') ?? '')
+                const subject = encodeURIComponent(`Portfolio message from ${name}`)
+                const body = encodeURIComponent(`${message}\n\n${name}\n${email}`)
+                window.location.href = `mailto:kenzalynursat@gmail.com?subject=${subject}&body=${body}`
+              }}>
+                <div className="contact-form-row">
+                  <input aria-label={t.namePlaceholder} name="name" placeholder={t.namePlaceholder} autoComplete="name" required />
+                  <input aria-label={t.emailPlaceholder} name="email" type="email" placeholder={t.emailPlaceholder} autoComplete="email" required />
+                </div>
+                <textarea aria-label={t.messagePlaceholder} name="message" placeholder={t.messagePlaceholder} rows={5} required />
+                <button className="contact-submit" type="submit">{t.sendMessage}</button>
+              </form>
+            </div>
           </div>
         </section>
       </main>
