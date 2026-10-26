@@ -151,7 +151,8 @@ function App() {
     <div className="site-shell" lang={language === 'kz' ? 'kk' : 'ru'}>
       <CrystalizedBall
         className="site-crystalized-background"
-        preset="nebula"
+        preset="ember"
+        color="#e34c43"
         theme="light"
         size={0.78}
         speed={0.55}
@@ -219,7 +220,7 @@ function App() {
               >
                 <span className="flip-face flip-front">
                   <span className="card-topline"><span>NS / 26</span><span>✳</span></span>
-                  <span className="monogram">N<span>.</span></span>
+                  <img className="hero-character" src="/assets/nursat-hero.png" alt="Нұрсаттың портфолиосына арналған қызыл реңкті аниме иллюстрациясы" />
                   <span className="flip-caption">{t.cardFront}</span>
                   <span className="flip-hint">↻　{t.cardHint}</span>
                 </span>

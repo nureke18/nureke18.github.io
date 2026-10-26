@@ -9,10 +9,10 @@ import './styles.css'
 const theme = createTheme({
   palette: {
     mode: 'light',
-    background: { default: '#fffaf1', paper: '#ffffff' },
-    primary: { main: '#ef5a8a' },
-    secondary: { main: '#7447d8' },
-    text: { primary: '#242326', secondary: '#625d65' },
+    background: { default: '#fff7f2', paper: '#ffffff' },
+    primary: { main: '#c52e3d' },
+    secondary: { main: '#f16b4f' },
+    text: { primary: '#251316', secondary: '#78666a' },
   },
   typography: {
     fontFamily: 'Inter, Arial, sans-serif',
