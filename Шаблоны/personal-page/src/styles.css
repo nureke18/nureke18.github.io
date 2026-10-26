@@ -88,31 +88,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid #c52e3d; outline-offs
 .visual-orbit { position: absolute; width: 18px; height: 18px; border: 4px solid #fff; border-radius: 50%; background: var(--violet); box-shadow: 0 4px 14px #c52e3d55; }
 .orbit-one { top: 14%; right: 15%; }
 .orbit-two { bottom: 16%; left: 9%; width: 13px; height: 13px; border: 3px solid #fff; background: #f16b4f; }
-.flip-card { position: relative; z-index: 2; width: min(72%, 310px); aspect-ratio: .78; perspective: 1000px; transform: rotate(4deg); }
-.flip-card-inner { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; border-radius: 26px; background: transparent; cursor: pointer; transform-style: preserve-3d; transition: transform 750ms cubic-bezier(.2,.75,.2,1); }
-.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
-.flip-face { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; overflow: hidden; border: 1px solid #ffffffaa; border-radius: 26px; box-shadow: 0 28px 75px #7b202b35; backface-visibility: hidden; }
-.flip-front { background: #321216; color: #fff; }
-.flip-front::before { content: ''; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, #16090b70 0%, transparent 30%, transparent 51%, #16090bdf 100%); }
-.flip-front::after { content: ''; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 70px #30101455; }
-.hero-character { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; border-radius: inherit; object-fit: cover; object-position: center 40%; }
-.card-topline, .flip-caption, .flip-hint { position: relative; z-index: 2; }
-.flip-back { align-items: flex-start; background: linear-gradient(145deg, #ffc19e, #f16b4f 58%, #b82339); color: var(--ink); transform: rotateY(180deg); }
-.card-topline { display: flex; justify-content: space-between; color: #ffffffb8; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
-.card-topline span:last-child { color: var(--lime); font-size: 21px; }
-.monogram { position: relative; z-index: 1; align-self: center; margin-top: 16px; font-size: clamp(110px, 18vw, 180px); line-height: .8; letter-spacing: -16px; font-weight: 800; text-shadow: 0 8px 26px #25174440; }
-.monogram span { color: var(--lime); }
-.flip-caption { position: relative; z-index: 1; max-width: 190px; font-size: 18px; line-height: 1.25; font-weight: 700; }
-.flip-hint { position: relative; z-index: 1; color: #ffffffa6; font-size: 10px; letter-spacing: 1px; }
-.flip-back .flip-hint { color: #514b46; }
-.back-spark { align-self: flex-end; color: #b91f36; font-size: 42px; }
-.back-message { margin-block: auto; font-size: 30px; line-height: 1.05; letter-spacing: -1px; font-weight: 800; }
-.float-note { position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: 9px; padding: 12px 16px; border: 1px solid #fff; border-radius: 14px; background: #fff; box-shadow: 0 12px 36px #33274820; font-size: 10px; font-weight: 800; letter-spacing: 1px; }
-.note-top { top: 17%; right: -1%; transform: rotate(5deg); color: var(--violet); }
-.note-icon { color: #f38b48; font-size: 15px; }
-.note-bottom { bottom: 12%; left: 0; transform: rotate(-5deg); color: #59474a; }
-.note-bottom .note-pulse { width: 7px; height: 7px; box-shadow: none; }
-.visual-index { position: absolute; right: 3%; bottom: 0; color: #8f7779; font-size: 10px; letter-spacing: 2px; }
+.hero-portrait { position: relative; z-index: 2; width: min(60%, 310px); aspect-ratio: 9 / 16; overflow: hidden; border: 1px solid #ffffffaa; border-radius: 26px; box-shadow: 0 28px 75px #7b202b35; transform: rotate(3deg); }
+.hero-character { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
 .ticker { overflow: hidden; border-block: 1px solid #efd8d1; background: #fae6df; color: #8d2432; }
 .ticker-track { width: max-content; display: flex; animation: ticker-move 32s linear infinite; }
@@ -226,7 +203,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #c52e3d; outline-offs
   .hero { min-height: 590px; gap: 20px; }
   .hero-title { font-size: clamp(48px, 7vw, 70px); letter-spacing: -4px; }
   .hero-visual { min-height: 390px; }
-  .flip-card { width: min(74%, 275px); }
+  .hero-portrait { width: min(62%, 280px); }
   .projects-title-row { align-items: flex-start; flex-direction: column; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -249,13 +226,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #c52e3d; outline-offs
   .hero-meta { margin-top: 28px; }
   .hero-visual { min-height: 390px; margin-top: 1px; }
   .hero-visual::before { width: min(76%, 330px); }
-  .flip-card { width: min(64%, 245px); }
-  .flip-face { padding: 19px; border-radius: 22px; }
-  .flip-card-inner { border-radius: 22px; }
-  .monogram { font-size: 132px; }
-  .note-top { top: 15%; right: -1%; }
-  .note-bottom { bottom: 10%; left: -1%; }
-  .float-note { padding: 10px 12px; font-size: 9px; }
+  .hero-portrait { width: min(64%, 230px); border-radius: 22px; }
   .section { padding-block: 78px; }
   .about-grid { grid-template-columns: 1fr; gap: 22px; padding-top: 27px; }
   .about-grid h2, .projects-title-row h2 { font-size: clamp(38px, 10vw, 54px); letter-spacing: -2.6px; }
@@ -287,7 +258,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid #c52e3d; outline-offs
   .nav-links { gap: 15px; }
   .hero-title { font-size: 47px; }
   .hero-visual { min-height: 340px; }
-  .float-note { font-size: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import CrystalizedBall from './CrystalizedBall'
 import GooeyNav from './GooeyNav'
 
-type Language = 'kz' | 'ru'
+type Language = 'kz' | 'ru' | 'en'
 type Filter = 'all' | 'live' | 'concept'
 
 const copy = {
@@ -14,9 +14,6 @@ const copy = {
     intro: 'Идеяны зерттеп, интерфейсті жобалап, оны жұмыс істейтін веб-бетке жеткіземін. Қазір үйреніп, пайдалы жобалар жасап жүрмін.',
     projectsCta: 'Жобаларды көру',
     githubCta: 'GitHub профилім ↗',
-    cardFront: 'Келесі идеяны бірге жасайық',
-    cardBack: 'Ойлан. Құрастыр. Жарияла.',
-    cardHint: 'Аудару үшін бас',
     ticker: 'ЖОБАЛАУ · ҮЙРЕНУ · ҚҰРАСТЫРУ · ЖАРИЯЛАУ ·',
     aboutLabel: '01 / МЕН ТУРАЛЫ',
     aboutTitle: 'Қызығушылықтан — дайын өнімге.',
@@ -58,9 +55,6 @@ const copy = {
     intro: 'Изучаю идею, проектирую интерфейс и довожу его до работающей веб-страницы. Сейчас учусь и создаю полезные проекты.',
     projectsCta: 'Смотреть проекты',
     githubCta: 'Мой GitHub ↗',
-    cardFront: 'Давайте создадим новую идею',
-    cardBack: 'Придумай. Собери. Запусти.',
-    cardHint: 'Нажми, чтобы перевернуть',
     ticker: 'ПРОЕКТИРОВАТЬ · УЧИТЬСЯ · СОЗДАВАТЬ · ПУБЛИКОВАТЬ ·',
     aboutLabel: '01 / ОБО МНЕ',
     aboutTitle: 'От интереса — к готовому продукту.',
@@ -94,6 +88,47 @@ const copy = {
     empty: 'В этой категории пока нет проектов.',
     technologies: ['React', 'TypeScript', 'Vite', 'HTML', 'CSS', 'Git', 'GitHub Pages', 'Responsive UI'],
   },
+  en: {
+    nav: ['Home', 'About', 'Projects', 'Skills', 'Contact'],
+    eyebrow: 'Hi, I’m Nursat',
+    role: 'I’m interested in web development',
+    headline: ['Turning', 'ideas', 'into digital experiences.'],
+    intro: 'I explore ideas, design interfaces, and turn them into working websites. I’m learning and building useful projects along the way.',
+    projectsCta: 'Explore projects',
+    githubCta: 'My GitHub ↗',
+    ticker: 'DESIGN · LEARN · BUILD · LAUNCH ·',
+    aboutLabel: '01 / ABOUT ME',
+    aboutTitle: 'From curiosity to a finished product.',
+    aboutText: 'A good web project is more than a nice look. It should be clear, fast, and comfortable to use on a phone. With every project, I learn something new and pay attention to the details.',
+    aboutNote: 'I’m currently growing my portfolio and gaining experience with web technologies.',
+    projectsLabel: '02 / SELECTED WORK',
+    projectsTitle: 'Ideas and projects',
+    filters: ['All', 'Live website', 'Concepts'],
+    liveTag: 'LIVE WEBSITE',
+    conceptTag: 'DESIGN CONCEPT',
+    projectPortfolio: 'Personal portfolio',
+    projectPortfolioText: 'A personal website featuring my background, skills, and examples of my work.',
+    projectBudget: 'Money in focus',
+    projectBudgetText: 'A budgeting app interface concept for keeping track of everyday spending.',
+    projectTravel: 'Hit the road',
+    projectTravelText: 'A mobile interface concept for planning and saving travel routes.',
+    openSite: 'Visit website ↗',
+    learnMore: 'About the project',
+    skillsLabel: '03 / TOOLS',
+    skillsTitle: 'Built with these tools',
+    skillsIntro: 'Technologies and skills I’m developing as I work on this project.',
+    showStack: 'Show technologies',
+    hideStack: 'Hide list',
+    contactLabel: '04 / CONTACT',
+    contactTitle: 'Have a new idea?',
+    contactText: 'Explore my projects or reach out on GitHub to share a suggestion or talk about an idea.',
+    contactButton: 'Open GitHub ↗',
+    footer: 'Made with care · 2026',
+    top: 'Back to top',
+    all: 'All work',
+    empty: 'There are no projects in this category yet.',
+    technologies: ['React', 'TypeScript', 'Vite', 'HTML', 'CSS', 'Git', 'GitHub Pages', 'Responsive UI'],
+  },
 } as const
 
 const projects = [
@@ -106,7 +141,6 @@ function App() {
   const [language, setLanguage] = useState<Language>('kz')
   const [filter, setFilter] = useState<Filter>('all')
   const [stackOpen, setStackOpen] = useState(false)
-  const [cardFlipped, setCardFlipped] = useState(false)
   const t = copy[language]
   const navTargets = ['#home', '#about', '#projects', '#skills', '#contact']
   const navItems = t.nav.map((label, index) => ({ label, href: navTargets[index] }))
@@ -148,7 +182,7 @@ function App() {
   ]
 
   return (
-    <div className="site-shell" lang={language === 'kz' ? 'kk' : 'ru'}>
+    <div className="site-shell" lang={language === 'kz' ? 'kk' : language}>
       <CrystalizedBall
         className="site-crystalized-background"
         preset="ember"
@@ -159,7 +193,7 @@ function App() {
         interactive={false}
       />
       <header className="site-header">
-        <nav className="nav wrap" aria-label={language === 'kz' ? 'Негізгі навигация' : 'Основная навигация'}>
+        <nav className="nav wrap" aria-label={language === 'kz' ? 'Негізгі навигация' : language === 'ru' ? 'Основная навигация' : 'Main navigation'}>
           <a className="brand" href="#home" aria-label="Nursat — home">
             <span className="brand-mark">N</span>
             <span>NURSAT<span className="brand-dot">.</span></span>
@@ -168,7 +202,7 @@ function App() {
             className="nav-links"
             items={navItems}
             theme="light"
-            color="#7543e8"
+            color="#c52e3d"
             activeTextColor="#ffffff"
             size="sm"
             frame={false}
@@ -179,8 +213,8 @@ function App() {
           <button
             className="language-toggle"
             type="button"
-            onClick={() => setLanguage(language === 'kz' ? 'ru' : 'kz')}
-            aria-label={language === 'kz' ? 'Switch to Russian' : 'Қазақшаға ауысу'}
+            onClick={() => setLanguage(language === 'kz' ? 'ru' : language === 'ru' ? 'en' : 'kz')}
+            aria-label={language === 'kz' ? 'Switch to Russian' : language === 'ru' ? 'Switch to English' : 'Switch to Kazakh'}
           >
             <span className="globe" aria-hidden="true">◎</span>
             {language.toUpperCase()}
@@ -210,30 +244,13 @@ function App() {
           <div className="hero-visual reveal">
             <span className="visual-orbit orbit-one" />
             <span className="visual-orbit orbit-two" />
-            <div className={`flip-card ${cardFlipped ? 'flipped' : ''}`}>
-              <button
-                className="flip-card-inner"
-                type="button"
-                onClick={() => setCardFlipped(!cardFlipped)}
-                aria-pressed={cardFlipped}
-                aria-label={t.cardHint}
-              >
-                <span className="flip-face flip-front">
-                  <span className="card-topline"><span>NS / 26</span><span>✳</span></span>
-                  <img className="hero-character" src="/assets/nursat-hero.png" alt="Нұрсаттың портфолиосына арналған қызыл реңкті аниме иллюстрациясы" />
-                  <span className="flip-caption">{t.cardFront}</span>
-                  <span className="flip-hint">↻　{t.cardHint}</span>
-                </span>
-                <span className="flip-face flip-back">
-                  <span className="back-spark">✳</span>
-                  <span className="back-message">{t.cardBack}</span>
-                  <span className="flip-hint">↻　NURSAT / PORTFOLIO</span>
-                </span>
-              </button>
+            <div className="hero-portrait">
+              <img
+                className="hero-character"
+                src="/assets/nursat-hero.png"
+                alt={language === 'kz' ? 'Қызыл күн батқан тау арасындағы аниме кейіпкері' : language === 'ru' ? 'Персонаж аниме на фоне гор и красного заката' : 'Anime character against mountains at a red sunset'}
+              />
             </div>
-            <div className="float-note note-top"><span className="note-icon">✦</span><span>IDEA → WEB</span></div>
-            <div className="float-note note-bottom"><span className="note-pulse" />{language === 'kz' ? 'ҮЙРЕНУ · ЖАСАУ' : 'УЧУСЬ · СОЗДАЮ'}</div>
-            <span className="visual-index">N / 01</span>
           </div>
         </section>
 
@@ -251,9 +268,9 @@ function App() {
             <div className="about-copy"><p>{t.aboutText}</p><p className="about-note"><span>↗</span>{t.aboutNote}</p></div>
           </div>
           <div className="principles">
-            <div className="principle"><span>01</span><strong>{language === 'kz' ? 'Зерттеу' : 'Исследовать'}</strong><small>{language === 'kz' ? 'Мәселені түсіну' : 'Понять задачу'}</small></div>
-            <div className="principle"><span>02</span><strong>{language === 'kz' ? 'Жобалау' : 'Проектировать'}</strong><small>{language === 'kz' ? 'Оңтайлы шешім табу' : 'Найти решение'}</small></div>
-            <div className="principle"><span>03</span><strong>{language === 'kz' ? 'Жариялау' : 'Публиковать'}</strong><small>{language === 'kz' ? 'Нәтижені іске қосу' : 'Запустить результат'}</small></div>
+            <div className="principle"><span>01</span><strong>{language === 'kz' ? 'Зерттеу' : language === 'ru' ? 'Исследовать' : 'Explore'}</strong><small>{language === 'kz' ? 'Мәселені түсіну' : language === 'ru' ? 'Понять задачу' : 'Understand the problem'}</small></div>
+            <div className="principle"><span>02</span><strong>{language === 'kz' ? 'Жобалау' : language === 'ru' ? 'Проектировать' : 'Design'}</strong><small>{language === 'kz' ? 'Оңтайлы шешім табу' : language === 'ru' ? 'Найти решение' : 'Find the right solution'}</small></div>
+            <div className="principle"><span>03</span><strong>{language === 'kz' ? 'Жариялау' : language === 'ru' ? 'Публиковать' : 'Launch'}</strong><small>{language === 'kz' ? 'Нәтижені іске қосу' : language === 'ru' ? 'Запустить результат' : 'Put the result online'}</small></div>
           </div>
         </section>
 
