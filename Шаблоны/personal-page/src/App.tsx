@@ -3,7 +3,7 @@ import CrystalizedBall from './CrystalizedBall'
 import GooeyNav from './GooeyNav'
 
 type Language = 'kz' | 'ru' | 'en'
-type Filter = 'all' | 'live' | 'concept'
+type Filter = 'all' | 'live' | 'academic' | 'concept'
 
 const copy = {
   kz: {
@@ -21,17 +21,21 @@ const copy = {
     aboutNote: 'Қазір өзімнің портфолиомды дамытып, веб технологиялармен тәжірибе жинап жүрмін.',
     projectsLabel: '02 / ТАҢДАЛҒАН ЖҰМЫСТАР',
     projectsTitle: 'Идеялар мен жобалар',
-    filters: ['Барлығы', 'Нақты сайт', 'Концепттер'],
+    filters: ['Барлығы', 'Нақты сайт', 'Оқу жобасы', 'Концепттер'],
     liveTag: 'ЖАРИЯЛАНҒАН САЙТ',
+    academicTag: 'ОҚУ ЖОБАСЫ',
     conceptTag: 'ДИЗАЙН КОНЦЕПТІ',
     projectPortfolio: 'Жеке портфолио',
     projectPortfolioText: 'Мен туралы, дағдыларым және жұмыс үлгілері туралы бір жерден көруге болатын жеке веб-сайт.',
+    projectZanKines: 'ZAN-KINES',
+    projectZanKinesText: 'Қазақстан заңдары мен Конституциясын қарапайым тілмен түсіндіретін ЖИ құқықтық көмекшісі. Llama 3 күрделі баптарды жеңілдетіп, жауапты мәтін не аудио түрінде береді.',
     projectBudget: 'Ақшаға көзқарас',
     projectBudgetText: 'Күнделікті шығындарды бақылауға көмектесетін бюджет қолданбасының интерфейс концепті.',
     projectTravel: 'Жолға шық',
     projectTravelText: 'Саяхат бағытын жоспарлап, сақтауға арналған сервистің мобильді интерфейс концепті.',
     openSite: 'Сайтты ашу ↗',
     learnMore: 'Жоба туралы',
+    viewPreview: 'Интерфейсті көру ↗',
     skillsLabel: '03 / ҚҰРАЛДАР',
     skillsTitle: 'Осы портфолионы жасауға қолдандым',
     skillsIntro: 'Жобамен бірге дамып жатқан технологиялар мен дағдылар.',
@@ -62,17 +66,21 @@ const copy = {
     aboutNote: 'Сейчас развиваю портфолио и набираюсь опыта с веб-технологиями.',
     projectsLabel: '02 / ИЗБРАННЫЕ РАБОТЫ',
     projectsTitle: 'Идеи и проекты',
-    filters: ['Все', 'Опубликованный сайт', 'Концепты'],
+    filters: ['Все', 'Сайт', 'Учебный проект', 'Концепты'],
     liveTag: 'ОПУБЛИКОВАННЫЙ САЙТ',
+    academicTag: 'УЧЕБНЫЙ ПРОЕКТ',
     conceptTag: 'ДИЗАЙН-КОНЦЕПТ',
     projectPortfolio: 'Личное портфолио',
     projectPortfolioText: 'Сайт, где собрана информация обо мне, моих навыках и примерах работ.',
+    projectZanKines: 'ZAN-KINES',
+    projectZanKinesText: 'ИИ-помощник, который простым языком объясняет Конституцию и законы Казахстана. На базе Llama 3 он упрощает сложные статьи и выдаёт ответы текстом или аудио.',
     projectBudget: 'Деньги под контролем',
     projectBudgetText: 'Концепция интерфейса бюджетного приложения для повседневного учёта расходов.',
     projectTravel: 'В путь',
     projectTravelText: 'Концепция мобильного сервиса для планирования и сохранения маршрутов путешествий.',
     openSite: 'Открыть сайт ↗',
     learnMore: 'О проекте',
+    viewPreview: 'Смотреть интерфейс ↗',
     skillsLabel: '03 / ИНСТРУМЕНТЫ',
     skillsTitle: 'Использовал для этого портфолио',
     skillsIntro: 'Технологии и навыки, которые развиваю по ходу работы над проектом.',
@@ -103,17 +111,21 @@ const copy = {
     aboutNote: 'I’m currently growing my portfolio and gaining experience with web technologies.',
     projectsLabel: '02 / SELECTED WORK',
     projectsTitle: 'Ideas and projects',
-    filters: ['All', 'Live website', 'Concepts'],
+    filters: ['All', 'Live website', 'Student project', 'Concepts'],
     liveTag: 'LIVE WEBSITE',
+    academicTag: 'STUDENT PROJECT',
     conceptTag: 'DESIGN CONCEPT',
     projectPortfolio: 'Personal portfolio',
     projectPortfolioText: 'A personal website featuring my background, skills, and examples of my work.',
+    projectZanKines: 'ZAN-KINES',
+    projectZanKinesText: 'An AI legal assistant that explains Kazakhstan’s Constitution and laws in plain language. Powered by Llama 3, it simplifies legal articles and provides answers as text or audio.',
     projectBudget: 'Money in focus',
     projectBudgetText: 'A budgeting app interface concept for keeping track of everyday spending.',
     projectTravel: 'Hit the road',
     projectTravelText: 'A mobile interface concept for planning and saving travel routes.',
     openSite: 'Visit website ↗',
     learnMore: 'About the project',
+    viewPreview: 'View interface ↗',
     skillsLabel: '03 / TOOLS',
     skillsTitle: 'Built with these tools',
     skillsIntro: 'Technologies and skills I’m developing as I work on this project.',
@@ -133,8 +145,9 @@ const copy = {
 
 const projects = [
   { id: 'portfolio', type: 'live' as const, number: '01', art: 'portfolio-art' },
-  { id: 'budget', type: 'concept' as const, number: '02', art: 'budget-art' },
-  { id: 'travel', type: 'concept' as const, number: '03', art: 'travel-art' },
+  { id: 'zan-kines', type: 'academic' as const, number: '02', art: 'zan-kines-art' },
+  { id: 'budget', type: 'concept' as const, number: '03', art: 'budget-art' },
+  { id: 'travel', type: 'concept' as const, number: '04', art: 'travel-art' },
 ]
 
 function App() {
@@ -165,12 +178,14 @@ function App() {
 
   const projectName = (id: string) => {
     if (id === 'portfolio') return t.projectPortfolio
+    if (id === 'zan-kines') return t.projectZanKines
     if (id === 'budget') return t.projectBudget
     return t.projectTravel
   }
 
   const projectDescription = (id: string) => {
     if (id === 'portfolio') return t.projectPortfolioText
+    if (id === 'zan-kines') return t.projectZanKinesText
     if (id === 'budget') return t.projectBudgetText
     return t.projectTravelText
   }
@@ -178,7 +193,8 @@ function App() {
   const filterLabels: { id: Filter; label: string }[] = [
     { id: 'all', label: t.filters[0] },
     { id: 'live', label: t.filters[1] },
-    { id: 'concept', label: t.filters[2] },
+    { id: 'academic', label: t.filters[2] },
+    { id: 'concept', label: t.filters[3] },
   ]
 
   return (
@@ -278,7 +294,7 @@ function App() {
           <div className="wrap">
             <div className="section-heading reveal">
               <span className="section-kicker">{t.projectsLabel}</span>
-              <span className="project-count">0{visibleProjects.length} / 03</span>
+              <span className="project-count">{String(visibleProjects.length).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}</span>
             </div>
             <div className="projects-title-row reveal">
               <h2>{t.projectsTitle}</h2>
@@ -294,23 +310,33 @@ function App() {
               {visibleProjects.map((project) => (
                 <article className={`project-card reveal ${project.art}`} key={project.id}>
                   <div className="project-art">
-                    <div className="art-orb" />
-                    <div className="art-window">
-                      <div className="window-dots"><i /><i /><i /></div>
-                      {project.id === 'portfolio' && <div className="preview-home"><b>N<span>.</span></b><i /><i /><div /></div>}
-                      {project.id === 'budget' && <div className="preview-budget"><small>MONTHLY OVERVIEW</small><strong>$2,480</strong><div className="budget-bars"><i /><i /><i /><i /><i /><i /><i /></div></div>}
-                      {project.id === 'travel' && <div className="preview-travel"><span>✳</span><strong>Find your<br />next place.</strong><i /></div>}
-                    </div>
+                    {project.id === 'zan-kines' ? (
+                      <img
+                        className="project-image"
+                        src="/assets/zan-kines-interface.png"
+                        alt={language === 'kz' ? 'ZAN-KINES құқықтық платформасының интерфейсі' : language === 'ru' ? 'Интерфейс правовой платформы ZAN-KINES' : 'ZAN-KINES legal platform interface'}
+                      />
+                    ) : (
+                      <>
+                        <div className="art-orb" />
+                        <div className="art-window">
+                          <div className="window-dots"><i /><i /><i /></div>
+                          {project.id === 'portfolio' && <div className="preview-home"><b>N<span>.</span></b><i /><i /><div /></div>}
+                          {project.id === 'budget' && <div className="preview-budget"><small>MONTHLY OVERVIEW</small><strong>$2,480</strong><div className="budget-bars"><i /><i /><i /><i /><i /><i /><i /></div></div>}
+                          {project.id === 'travel' && <div className="preview-travel"><span>✳</span><strong>Find your<br />next place.</strong><i /></div>}
+                        </div>
+                      </>
+                    )}
                     <span className="art-number">{project.number}</span>
-                    <span className="project-open">↗</span>
+                    {project.id !== 'zan-kines' && <span className="project-open">↗</span>}
                   </div>
                   <div className="project-info">
-                    <div className="project-topline"><span>{project.type === 'live' ? t.liveTag : t.conceptTag}</span><span>{project.number} / 03</span></div>
+                    <div className="project-topline"><span>{project.type === 'live' ? t.liveTag : project.type === 'academic' ? t.academicTag : t.conceptTag}</span><span>{project.number} / {String(projects.length).padStart(2, '0')}</span></div>
                     <h3>{projectName(project.id)}</h3>
                     <p>{projectDescription(project.id)}</p>
                     <div className="project-bottom">
-                      <span className="project-tech">{project.id === 'portfolio' ? 'REACT · TYPESCRIPT · CSS' : project.id === 'budget' ? 'PRODUCT DESIGN · UI/UX' : 'MOBILE UI · PROTOTYPE'}</span>
-                      {project.id === 'portfolio' ? <a href="https://nureke18.github.io/" target="_blank" rel="noreferrer">{t.openSite}</a> : <span className="concept-label">{t.learnMore} ↗</span>}
+                      <span className="project-tech">{project.id === 'portfolio' ? 'REACT · TYPESCRIPT · CSS' : project.id === 'zan-kines' ? 'AI · LLAMA 3 · TEXT + AUDIO' : project.id === 'budget' ? 'PRODUCT DESIGN · UI/UX' : 'MOBILE UI · PROTOTYPE'}</span>
+                      {project.id === 'portfolio' ? <a href="https://nureke18.github.io/" target="_blank" rel="noreferrer">{t.openSite}</a> : project.id === 'zan-kines' ? <a href="/assets/zan-kines-interface.png" target="_blank" rel="noreferrer">{t.viewPreview}</a> : <span className="concept-label">{t.learnMore} ↗</span>}
                     </div>
                   </div>
                 </article>
